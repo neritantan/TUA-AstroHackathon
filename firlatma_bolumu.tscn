@@ -205,7 +205,7 @@ position = Vector2(7523, 273.99994)
 scale = Vector2(10000, 1)
 shape = SubResource("RectangleShape2D_ljnp2")
 
-[node name="Roket" type="RigidBody2D" parent="." unique_id=1556403234 node_paths=PackedStringArray("ana_govde_sprite", "gaz_gostergesi", "aci_gostergesi", "aci_yazisi_label", "alev_efekti", "duman_efekti", "motor_sesi", "kamera", "yakit_gostergesi", "hiz_yazisi_label", "yukseklik_yazisi_label", "stres_gostergesi", "patlama_efekti", "patlama_sesi", "uyari_yazisi_label", "sol_booster_sprite", "sag_booster_sprite", "aslinin_ekrani", "gokyuzu_layer", "yildizlar_layer")]
+[node name="Roket" type="RigidBody2D" parent="." unique_id=1556403234 node_paths=PackedStringArray("ana_govde_sprite", "gaz_gostergesi", "aci_gostergesi", "aci_yazisi_label", "alev_efekti", "duman_efekti", "motor_sesi", "kamera", "yakit_gostergesi", "hiz_yazisi_label", "yukseklik_yazisi_label", "stres_gostergesi", "patlama_efekti", "patlama_sesi", "uyari_yazisi_label", "sol_booster_sprite", "sag_booster_sprite", "cursor_sprite", "aslinin_ekrani", "gokyuzu_layer", "yildizlar_layer")]
 position = Vector2(0, 52)
 script = ExtResource("1_ljnp2")
 ana_govde_sprite = NodePath("anaroket")
@@ -225,6 +225,7 @@ patlama_sesi = NodePath("patlama")
 uyari_yazisi_label = NodePath("../Arayuz/ayrilmauyarisi")
 sol_booster_sprite = NodePath("kati2")
 sag_booster_sprite = NodePath("kati1")
+cursor_sprite = NodePath("../Arayuz/AciGostergesi")
 aslinin_ekrani = NodePath("../Tutor")
 gokyuzu_layer = NodePath("../ParallaxSistemi/Katman1Gokyuzu")
 yildizlar_layer = NodePath("../ParallaxSistemi/yildizlar")

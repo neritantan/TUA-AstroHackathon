@@ -1,0 +1,393 @@
+[gd_scene format=3 uid="uid://c1hyviluh16su"]
+
+[ext_resource type="Texture2D" uid="uid://0yojji185ykr" path="res://yildizdeneme.png" id="1_eyb3o"]
+[ext_resource type="Script" uid="uid://dvav6hc4p4svc" path="res://ay_inis.gd" id="5_1lm8q"]
+[ext_resource type="Texture2D" uid="uid://cv2gghr8yoefq" path="res://patlama/explosion_01.png" id="5_giqlm"]
+[ext_resource type="Texture2D" uid="uid://ciligfest6r4" path="res://roket_efekt/spaceEffects_001.png" id="6_1lm8q"]
+[ext_resource type="Texture2D" uid="uid://cv4lqaoqg4uky" path="res://minimap_arrow_b.svg" id="6_m5mn3"]
+[ext_resource type="Texture2D" uid="uid://dhxbt85dn8ivy" path="res://patlama/explosion_02.png" id="6_vyi5v"]
+[ext_resource type="Texture2D" uid="uid://dxcfti6yjxqca" path="res://plane_pack/sky_background/parallax_parts/sun.png" id="7_n1q2b"]
+[ext_resource type="Texture2D" uid="uid://0versr8yi85o" path="res://patlama/explosion_03.png" id="7_w6by7"]
+[ext_resource type="Texture2D" uid="uid://dp6jt71apx1th" path="res://plane_pack/sky_background/parallax_parts/mountain_with_hills/farground_mountains.png" id="8_o274q"]
+[ext_resource type="Texture2D" uid="uid://dh7bxby1w4l0a" path="res://patlama/explosion_04.png" id="8_vnyt5"]
+[ext_resource type="Texture2D" uid="uid://blvtossg4tgqn" path="res://patlama/explosion_05.png" id="9_d3igx"]
+[ext_resource type="Texture2D" uid="uid://ci3pym0iuvs0c" path="res://patlama/explosion_06.png" id="10_1lm8q"]
+[ext_resource type="Texture2D" uid="uid://bmbf2djxhbcbe" path="res://patlama/explosion_07.png" id="11_m5mn3"]
+[ext_resource type="Texture2D" uid="uid://bhuqbyeeqdnhw" path="res://patlama/explosion_08.png" id="12_ty66r"]
+[ext_resource type="Texture2D" uid="uid://ce2anvi13pb0k" path="res://patlama/explosion_09.png" id="13_iffco"]
+[ext_resource type="Texture2D" uid="uid://3a0kmwkedvs1" path="res://mekik.png" id="16_m5mn3"]
+[ext_resource type="Texture2D" uid="uid://cfolqllv2dlaj" path="res://plane_pack/sky_background/parallax_parts/mountains/midground_mountains.png" id="26_m5mn3"]
+[ext_resource type="Texture2D" uid="uid://blma0txyuv87q" path="res://image-removebg-preview (1).png" id="27_4f8y7"]
+[ext_resource type="FontFile" uid="uid://bw4fskgmsx1yj" path="res://Orbitron-VariableFont_wght.ttf" id="28_qtno5"]
+[ext_resource type="Texture2D" uid="uid://cde3je30h5pil" path="res://minimap_ring_grey.svg" id="29_g26qa"]
+[ext_resource type="Texture2D" uid="uid://efen52t7uabb" path="res://minimap_arrow_a.svg" id="30_btnus"]
+[ext_resource type="Script" uid="uid://lg1h0yh6o8ke" path="res://tutor.gd" id="31_nfw08"]
+[ext_resource type="Texture2D" uid="uid://bdyp0jh1vq5gs" path="res://metinkutu.png" id="32_kxqw2"]
+[ext_resource type="Texture2D" uid="uid://8kgajpknpqsw" path="res://konuşan kadın türk(1).png" id="33_fd6tt"]
+[ext_resource type="Script" uid="uid://74i5db517ynx" path="res://info_ui.gd" id="34_d4k6l"]
+[ext_resource type="Texture2D" uid="uid://6g1tpwqodtab" path="res://bilgikutu.png" id="35_ea6iw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4r1b"]
+size = Vector2(16, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ttllg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_giqlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vyi5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w6by7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vnyt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d3igx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1lm8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m5mn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ty66r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iffco")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4pqy"]
+bg_color = Color(1, 0.51666665, 0, 0.7764706)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdabs"]
+bg_color = Color(1, 0, 0.016666412, 0.7764706)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5mn3"]
+size = Vector2(383, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty66r"]
+size = Vector2(1428, 53)
+
+[node name="Ayainis" type="Node2D" unique_id=1607501131]
+position = Vector2(579, 602)
+
+[node name="ParallaxSistemi" type="ParallaxBackground" parent="." unique_id=646901866]
+
+[node name="yildizlar" type="ParallaxLayer" parent="ParallaxSistemi" unique_id=1534044374]
+position = Vector2(579, 602)
+motion_scale = Vector2(0.01, 0.01)
+motion_mirroring = Vector2(2050, 2600)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxSistemi/yildizlar" unique_id=1342633375]
+position = Vector2(307.74994, -382.65622)
+scale = Vector2(2.515625, 1.6335601)
+texture = ExtResource("1_eyb3o")
+
+[node name="gunes" type="ParallaxLayer" parent="ParallaxSistemi" unique_id=1581518394]
+position = Vector2(578, 602)
+motion_scale = Vector2(0.01, 0.01)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxSistemi/gunes" unique_id=1529258385]
+position = Vector2(254.46248, -450.12506)
+scale = Vector2(0.36722416, 0.3399582)
+texture = ExtResource("7_n1q2b")
+
+[node name="uzakdaglar" type="ParallaxLayer" parent="ParallaxSistemi" unique_id=1380788045]
+position = Vector2(578, 602)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxSistemi/uzakdaglar" unique_id=952532252]
+position = Vector2(47, -242.00002)
+scale = Vector2(1.1491699, 0.8242424)
+texture = ExtResource("8_o274q")
+
+[node name="Zemin" type="StaticBody2D" parent="." unique_id=903531350]
+
+[node name="Roket" type="RigidBody2D" parent="." unique_id=2123466081 node_paths=PackedStringArray("inis_alani", "hedef_oku", "hedef_mesafe_yazisi", "ana_govde_sprite", "gaz_gostergesi", "aci_gostergesi", "aci_yazisi_label", "alev_efekti", "kamera", "yakit_gostergesi", "hiz_yazisi_label", "yukseklik_yazisi_label", "patlama_efekti", "aslinin_ekrani")]
+position = Vector2(-784, -1093)
+script = ExtResource("5_1lm8q")
+inis_alani = NodePath("../inispisti/CollisionShape2D")
+hedef_oku = NodePath("ok")
+hedef_mesafe_yazisi = NodePath("../InfoUI/PanelContainer/Sprite2D/Label")
+ana_govde_sprite = NodePath("anaroket")
+gaz_gostergesi = NodePath("../Arayuz/GazGostergesi")
+aci_gostergesi = NodePath("../Arayuz/AciGostergesi")
+aci_yazisi_label = NodePath("../Arayuz/AciYazisi")
+alev_efekti = NodePath("EgzozEfekt")
+kamera = NodePath("Camera2D")
+yakit_gostergesi = NodePath("../Arayuz/YakitGostergesi")
+hiz_yazisi_label = NodePath("../Arayuz/Sprite2D/hiz")
+yukseklik_yazisi_label = NodePath("../Arayuz/Sprite2D/irtifa")
+patlama_efekti = NodePath("PatlamaEfekti")
+aslinin_ekrani = NodePath("../Tutor")
+
+[node name="ok" type="Sprite2D" parent="Roket" unique_id=494284280]
+position = Vector2(-801, -1160)
+scale = Vector2(0.75, 1)
+texture = ExtResource("6_m5mn3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roket" unique_id=521284011]
+position = Vector2(-800.8475, -1120.0254)
+shape = SubResource("RectangleShape2D_w4r1b")
+
+[node name="Camera2D" type="Camera2D" parent="Roket" unique_id=632392163]
+position = Vector2(-800.8475, -1119.5254)
+zoom = Vector2(1.5, 1.5)
+drag_vertical_enabled = true
+
+[node name="EgzozEfekt" type="CPUParticles2D" parent="Roket" unique_id=1609919457]
+position = Vector2(-800.8475, -1107.5254)
+amount = 1
+texture = ExtResource("6_1lm8q")
+lifetime = 0.01
+emission_shape = 1
+emission_sphere_radius = 0.51
+
+[node name="PatlamaEfekti" type="AnimatedSprite2D" parent="Roket" unique_id=315700752]
+visible = false
+position = Vector2(0, -500)
+sprite_frames = SubResource("SpriteFrames_ttllg")
+
+[node name="anaroket" type="Sprite2D" parent="Roket" unique_id=75553536]
+position = Vector2(-800.8475, -1093.5254)
+scale = Vector2(0.22033899, 0.19365078)
+texture = ExtResource("16_m5mn3")
+offset = Vector2(0, -150)
+
+[node name="Arayuz" type="CanvasLayer" parent="." unique_id=1725825359]
+
+[node name="Sprite2D" type="Sprite2D" parent="Arayuz" unique_id=1909090208]
+position = Vector2(1650, 112)
+texture = ExtResource("27_4f8y7")
+
+[node name="hiz" type="Label" parent="Arayuz/Sprite2D" unique_id=934003721]
+offset_left = -197.0
+offset_top = -40.0
+offset_right = -152.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("28_qtno5")
+theme_override_font_sizes/font_size = 24
+text = "HIZ"
+metadata/_edit_use_anchors_ = true
+
+[node name="irtifa" type="Label" parent="Arayuz/Sprite2D" unique_id=136773704]
+offset_left = -197.0
+offset_top = 11.0
+offset_right = -111.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("28_qtno5")
+theme_override_font_sizes/font_size = 24
+text = "IRTIFA"
+metadata/_edit_use_anchors_ = true
+
+[node name="YakitGostergesi" type="ProgressBar" parent="Arayuz" unique_id=1422663178]
+offset_left = 1764.0
+offset_top = 511.0
+offset_right = 1820.0
+offset_bottom = 909.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_b4pqy")
+value = 100.0
+fill_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Arayuz/YakitGostergesi" unique_id=999327441]
+layout_mode = 0
+offset_left = 0.99999785
+offset_top = 396.0
+offset_right = 145.0
+offset_bottom = 446.19995
+rotation = -1.5707964
+theme_override_fonts/font = ExtResource("28_qtno5")
+theme_override_font_sizes/font_size = 36
+text = "YAKIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GazGostergesi" type="ProgressBar" parent="Arayuz" unique_id=2071436144]
+offset_left = 1827.0
+offset_top = 511.0
+offset_right = 1883.0
+offset_bottom = 909.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_vdabs")
+fill_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Arayuz/GazGostergesi" unique_id=48356165]
+layout_mode = 0
+offset_left = 1.9999979
+offset_top = 419.0
+offset_right = 146.0
+offset_bottom = 469.19995
+rotation = -1.5707964
+theme_override_fonts/font = ExtResource("28_qtno5")
+theme_override_font_sizes/font_size = 36
+text = "İTKİ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Arayuz" unique_id=827618051]
+modulate = Color(1, 1, 1, 0.43137255)
+offset_left = 792.0
+offset_top = 790.0
+offset_right = 1114.0
+offset_bottom = 1114.0
+texture = ExtResource("29_g26qa")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AciGostergesi" type="TextureRect" parent="Arayuz" unique_id=1317392353]
+modulate = Color(1, 1, 1, 0.6313726)
+offset_left = 936.0
+offset_top = 781.0
+offset_right = 966.0
+offset_bottom = 810.0
+pivot_offset = Vector2(0, 150)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("30_btnus")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="AciYazisi" type="Label" parent="Arayuz" unique_id=676234010]
+offset_left = 860.0
+offset_top = 871.0
+offset_right = 997.0
+offset_bottom = 933.0
+theme_override_colors/font_color = Color(0.1861851, 0.1861851, 0.1861851, 1)
+theme_override_fonts/font = ExtResource("28_qtno5")
+theme_override_font_sizes/font_size = 36
+text = "90°"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ayrilmauyarisi" type="Label" parent="Arayuz" unique_id=1743542920]
+offset_left = 752.0
+offset_top = 683.0
+offset_right = 1155.0
+offset_bottom = 750.0
+theme_override_colors/font_color = Color(0.9389863, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+metadata/_edit_use_anchors_ = true
+
+[node name="Tutor" type="CanvasLayer" parent="." unique_id=1331310409 node_paths=PackedStringArray("metin_label")]
+process_mode = 3
+layer = 100
+visible = false
+script = ExtResource("31_nfw08")
+metin_label = NodePath("DiyalogKutusu/MetinLabel")
+
+[node name="ArkaplanKarartici" type="ColorRect" parent="Tutor" unique_id=1247432690]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.15)
+
+[node name="DiyalogKutusu" type="Panel" parent="Tutor" unique_id=406901320]
+offset_left = 262.0
+offset_top = 401.0
+offset_right = 739.0
+offset_bottom = 794.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutor/DiyalogKutusu" unique_id=1533518725]
+position = Vector2(244, 182)
+scale = Vector2(1.219, 1.066)
+texture = ExtResource("32_kxqw2")
+
+[node name="MetinLabel" type="Label" parent="Tutor/DiyalogKutusu" unique_id=960737016]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 10.0
+offset_right = 440.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 24
+text = "Lorem ipsum dolor sit amet"
+autowrap_mode = 2
+
+[node name="DevamUyarisi" type="Label" parent="Tutor/DiyalogKutusu" unique_id=2128697277]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 327.0
+offset_right = 389.0
+offset_bottom = 369.0
+text = "Devam için [C] Tuşuna'a bas    "
+horizontal_alignment = 2
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="AsliPortre" type="TextureRect" parent="Tutor" unique_id=1278054950]
+offset_left = -58.0
+offset_top = 574.0
+offset_right = 618.0
+offset_bottom = 943.0
+texture = ExtResource("33_fd6tt")
+
+[node name="InfoUI" type="CanvasLayer" parent="." unique_id=76165334 node_paths=PackedStringArray("bilgi_label", "panel_konteynir")]
+process_mode = 3
+layer = 10
+script = ExtResource("34_d4k6l")
+bilgi_label = NodePath("PanelContainer/Sprite2D/Label")
+panel_konteynir = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="InfoUI" unique_id=195877551]
+offset_left = -30.0
+offset_top = 41.0
+offset_right = 561.0
+offset_bottom = 188.0
+
+[node name="Sprite2D" type="Sprite2D" parent="InfoUI/PanelContainer" unique_id=1343646373]
+position = Vector2(296, 76)
+scale = Vector2(1.316568, 0.96951216)
+texture = ExtResource("35_ea6iw")
+
+[node name="Label" type="Label" parent="InfoUI/PanelContainer/Sprite2D" unique_id=39941140]
+offset_left = -148.8719
+offset_top = -74.26415
+offset_right = 295.4651
+offset_bottom = 56.72956
+theme_override_fonts/font = ExtResource("28_qtno5")
+theme_override_font_sizes/font_size = 21
+autowrap_mode = 2
+max_lines_visible = 200
+visible_characters = 200
+
+[node name="inispisti" type="StaticBody2D" parent="." unique_id=994493331 groups=["inisalani"]]
+position = Vector2(-14, -108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inispisti" unique_id=43952454]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_m5mn3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1930050395]
+position = Vector2(-1, -16.5)
+shape = SubResource("RectangleShape2D_ty66r")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1554227261]
+
+[node name="MidgroundMountains" type="Sprite2D" parent="CollisionShape2D" unique_id=526164550]
+position = Vector2(17.000004, 1.357193)
+rotation = 3.1415927
+scale = Vector2(1, 1.5738287)
+texture = ExtResource("26_m5mn3")

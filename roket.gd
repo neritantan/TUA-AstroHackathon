@@ -34,6 +34,11 @@ var ana_motor_itkisi: float = 1740.0
 @export var uyari_yazisi_label: Label
 @export var sol_booster_sprite: Sprite2D
 @export var sag_booster_sprite: Sprite2D
+
+# YENİ EKLENEN DEĞİŞKENLER (Jiroskop ve Tork için)
+@export var cursor_sprite: CanvasItem 
+var uzay_tork_carpani: float = 0.3 
+
 var kademe_ayrildi_mi = false
 
 var uzay_kararma_baslangic: float = 50000.0
@@ -184,7 +189,13 @@ func _physics_process(delta):
 
 	var roketin_baktigi_yon = Vector2.UP.rotated(rotation)
 	apply_central_force(roketin_baktigi_yon * (max_itki * guncel_throttle))
-	apply_torque(donus_yonu * donus_torku)
+	
+	# YENİ EKLENEN KISIM: Yüksekliğe göre Tork Ayarı
+	var aktif_tork = donus_torku
+	if yukseklik > 30000:
+		aktif_tork = donus_torku * uzay_tork_carpani
+		
+	apply_torque(donus_yonu * aktif_tork)
 
 	if yukseklik < karman_hatti_irtifasi:
 		var roketin_yani = Vector2.RIGHT.rotated(rotation)
@@ -196,9 +207,17 @@ func _physics_process(delta):
 	if gaz_gostergesi != null: gaz_gostergesi.value = guncel_throttle * 100
 	if yakit_gostergesi != null: yakit_gostergesi.value = guncel_yakit
 	if aci_gostergesi != null: aci_gostergesi.rotation = rotation
+	
+	var gercek_aci = 90 - abs(round(rad_to_deg(rotation)))
 	if aci_yazisi_label != null:
-		var gercek_aci = 90 - abs(round(rad_to_deg(rotation)))
 		aci_yazisi_label.text = "Açı: " + str(gercek_aci) + "°"
+
+	# YENİ EKLENEN KISIM: 30.000 metre sonrası Cursor Renklendirme
+	if cursor_sprite != null:
+		if yukseklik > 30000 and gercek_aci >= 43 and gercek_aci <= 47:
+			cursor_sprite.modulate = Color(0, 1, 0) # Yeşil
+		else:
+			cursor_sprite.modulate = Color(1, 1, 1) # Beyaz
 
 	# --- ALEV VE DUMAN EFEKTLERİ ---
 	if alev_efekti != null and duman_efekti != null:
@@ -230,11 +249,6 @@ func _physics_process(delta):
 			kamera.offset = Vector2(0, -200)
 
 	# --- HIZ HESABI ---
-	# HESAPLANDI: hiz_katsayisi=20
-	# Karman hattında beklenen linear_velocity ≈ 3000-5000 px/s
-	# gosterge = (velocity / 10) * 20 = velocity * 2
-	# 3500 px/s → 7000 m/s (min yörünge) ✓
-	# 4750 px/s → 9500 m/s (max yörünge) ✓
 	var gosterge_hizi = round((linear_velocity.length() / 10.0) * hiz_katsayisi)
 
 	if hiz_yazisi_label != null: hiz_yazisi_label.text = "Hız: " + str(gosterge_hizi) + " m/s"
@@ -260,7 +274,7 @@ func _physics_process(delta):
 		if guncel_yakit <= 80.0 and not egitim_asamalari["staging"]:
 			egitim_asamalari["staging"] = true
 			aslinin_ekrani.konus(aslinin_replikleri["staging"])
-		if yukseklik > karman_hatti_irtifasi and not egitim_asamalari["uzay"]:
+		if yukseklik > karman_hatti_irtifasi - 30000 and not egitim_asamalari["uzay"]:
 			egitim_asamalari["uzay"] = true
 			aslinin_ekrani.konus(aslinin_replikleri["uzay"])
 
@@ -329,14 +343,8 @@ func ayrilma_tetikle():
 	kademe_ayrildi_mi = true
 	if uyari_yazisi_label != null: uyari_yazisi_label.hide()
 
-	# HESAPLANDI:
-	# Staging öncesi: mass=2.0, max_itki=3000 → TWR=1.53
-	# Staging sonrası: mass=1.0, max_itki=1740 → TWR=1740/980=1.78
-	# Kütle yarıya indi ama itki de %58'e indi → net ivme hafifçe artar, roket "şahlanır"
-	# Staging anında gosterge_hizi ≈ 2500-3500 m/s beklenir
-	# Karman'a kadar 7000+ m/s'ye çıkması için uzayda serbest ivmelenme yeterli
-	mass = 1.0  # mass*0.5 yerine direkt 1.0 → hesap netliği için
-	max_itki = ana_motor_itkisi  # 3000 → 1740
+	mass = 1.0  
+	max_itki = ana_motor_itkisi  
 
 	var roketin_hizi = linear_velocity
 	var roketin_donme_hizi = angular_velocity
